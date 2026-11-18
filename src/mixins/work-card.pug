@@ -1,0 +1,45 @@
+mixin work-card(work, href="#contact")
+    article.work-card(data-category=work.category)
+        .work-card__art(class=`work-card__art--${work.art}` aria-hidden="true")
+            case work.art
+                when "tag"
+                    span.work-card__tag-shape
+                        span= work.artText
+                when "piece"
+                    span.work-card__piece-word PIECE
+                        span PAPER
+                when "record"
+                    span.work-card__disc-cover
+                    span.work-card__disc-record
+                        span
+                when "volume"
+                    span.work-card__volume-paper
+                    span.work-card__volume-title= work.artText
+                when "profile"
+                    span.work-card__profile-ring
+                        span +
+                    span.work-card__profile-title= work.artTitle
+                    span.work-card__profile-rule
+                    span.work-card__profile-name= work.profileName
+                    span.work-card__profile-email= work.profileEmail
+                when "cards"
+                    span.work-card__card-back
+                    span.work-card__card-front
+                        span
+                when "walls"
+                    span.work-card__walls-triangle
+                    span.work-card__walls-title= work.artText
+                when "john"
+                    span.work-card__john-card
+                        span JOHN DOE
+                        small DESIGN STUDIO
+                when "fabric"
+                    span.work-card__fabric-label= work.artText
+                default
+                    span.work-card__art-fallback
+        a.work-card__overlay(href=work.href || href aria-label=`View ${work.title}, ${work.categoryLabel}`)
+            +icon("plus", "work-card__plus")
+            h3.work-card__name= work.title
+            span.work-card__rule(aria-hidden="true")
+            if work.categoryLabel
+                span.work-card__category= work.categoryLabel

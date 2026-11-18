@@ -1,0 +1,14 @@
+mixin btn(label, href="#", modifier="primary", element="a")
+    - const buttonClasses = ["button", `button--${modifier}`]
+    if element === "button"
+        button(class=buttonClasses type="button")&attributes(attributes)
+            if block
+                block
+            else
+                = label
+    else
+        a(class=buttonClasses href=href)&attributes(attributes)
+            if block
+                block
+            else
+                = label

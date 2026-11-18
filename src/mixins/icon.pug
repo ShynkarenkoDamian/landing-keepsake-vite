@@ -1,0 +1,28 @@
+mixin icon(name, className="icon")
+    - const viewBox = name === "quote" ? "0 0 54 44" : ["web", "motion", "print", "illustration"].includes(name) ? "0 0 48 48" : "0 0 24 24"
+    svg(class=className aria-hidden="true" focusable="false" viewBox=viewBox)
+        case name
+            when "heart"
+                use(href="#icon-heart")
+            when "mail"
+                use(href="#icon-mail")
+            when "chevron"
+                use(href="#icon-chevron")
+            when "up"
+                use(href="#icon-up")
+            when "quote"
+                path.icon__shape(d="M22 2C9 6 2 16 2 30v12h20V24h-9c1-5 5-9 11-12L22 2Zm27 0C36 6 29 16 29 30v12h20V24h-9c1-5 5-9 11-12l-2-10Z")
+            when "web"
+                rect.icon__frame(x="8" y="12" width="32" height="24")
+                rect.icon__screen(x="13" y="17" width="22" height="14")
+                rect.icon__accent(x="16" y="20" width="9" height="8")
+            when "motion"
+                rect.icon__camera(x="7" y="11" width="34" height="26" rx="5")
+                rect.icon__screen(x="13" y="16" width="22" height="16" rx="3")
+            when "print"
+                rect.icon__stamp(x="14" y="12" width="20" height="17")
+                rect.icon__base(x="8" y="28" width="32" height="9" rx="2")
+            when "illustration"
+                path.icon__heart(d="M24 38 9 23.5C2 15 14 6 24 16 34 6 46 15 39 23.5L24 38Z")
+            default
+                path.icon__shape(d="M12 5v14M5 12h14")
