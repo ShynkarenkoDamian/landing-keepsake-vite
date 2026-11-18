@@ -1,0 +1,98 @@
+@use '../abstracts' as a;
+
+.mobile-menu {
+  margin-left: auto;
+
+  &__toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+    cursor: pointer;
+
+    &::marker {
+      content: '';
+    }
+  }
+
+  &__line {
+    width: 23px;
+    height: 2px;
+    display: block;
+    background: var(--color-text-dark);
+    transition: transform var(--ease), width var(--ease);
+  }
+
+  &[open] &__line:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  &[open] &__line:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  &__panel {
+    position: fixed;
+    inset: var(--header-height) 0 0;
+    z-index: 19;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: var(--color-white);
+  }
+
+  &:not([open]) &__panel {
+    display: none;
+  }
+
+  &__actions {
+    display: grid;
+    gap: 11px;
+    padding: 28px var(--gutter) 58px;
+
+    .button {
+      width: 100%;
+    }
+
+    svg {
+      width: 17px;
+      height: 17px;
+      margin-right: 6px;
+      fill: currentColor;
+    }
+  }
+
+  &__contact {
+    margin-top: auto;
+    padding: 24px var(--gutter) 31px;
+    background: var(--color-bg-light);
+
+    .social-links {
+      margin-top: 20px;
+    }
+  }
+
+  &__contact-label {
+    margin: 0 0 11px;
+    color: var(--color-muted);
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__email,
+  &__phone {
+    display: block;
+    margin-top: 8px;
+    color: var(--color-text);
+  }
+
+  @include a.mq(md) {
+    display: none;
+  }
+}

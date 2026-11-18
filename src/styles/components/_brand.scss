@@ -1,0 +1,28 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--color-text-dark);
+  line-height: 1;
+
+  &__mark {
+    width: var(--brand-mark-size);
+    height: var(--brand-mark-size);
+    display: grid;
+    place-items: center;
+    border-radius: var(--round);
+    background: var(--color-text-dark);
+    color: var(--color-white);
+    font-family: var(--font-script);
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  &__name {
+    margin-left: -1px;
+    font-family: var(--font-script);
+    font-size: var(--logo-size);
+    font-weight: 700;
+    letter-spacing: -1.1px;
+  }
+}

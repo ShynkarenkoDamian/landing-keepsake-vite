@@ -1,1 +1,8 @@
-// Component partials are forwarded as they are implemented.
+@forward 'site-header';
+@forward 'brand';
+@forward 'primary-nav';
+@forward 'mobile-menu';
+@forward 'mobile-nav';
+@forward 'button';
+@forward 'social-links';
+@forward 'icon';

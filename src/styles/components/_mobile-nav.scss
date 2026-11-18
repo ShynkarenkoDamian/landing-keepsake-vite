@@ -1,0 +1,32 @@
+.mobile-nav {
+  padding-inline: var(--gutter);
+
+  &__link {
+    min-height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible,
+    &--active {
+      color: var(--color-accent);
+    }
+  }
+
+  &__chevron {
+    color: var(--color-grey-border);
+    font-family: var(--font-body);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+  }
+}

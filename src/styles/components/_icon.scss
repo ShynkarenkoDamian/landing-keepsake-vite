@@ -1,0 +1,38 @@
+.icon {
+  display: block;
+  flex-shrink: 0;
+
+  &__frame {
+    fill: none;
+    stroke: var(--color-service-frame);
+    stroke-width: 4;
+  }
+
+  &__screen {
+    fill: var(--color-service-screen);
+  }
+
+  &__accent {
+    fill: var(--color-service-green);
+  }
+
+  &__camera {
+    fill: var(--color-service-frame);
+  }
+
+  &__stamp {
+    fill: var(--color-service-yellow);
+  }
+
+  &__base {
+    fill: var(--color-service-base);
+  }
+
+  &__heart {
+    fill: var(--color-accent);
+  }
+
+  &__shape {
+    fill: currentColor;
+  }
+}
