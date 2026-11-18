@@ -1,0 +1,19 @@
+section.clients(aria-labelledby="clients-title")
+    .container.clients__container
+        h2#clients-title.clients__title Clients & kind words
+        p.clients__intro Some of the teams that trusted us with their brands.
+        ul.clients__logos(aria-label="Selected clients")
+            each client in clientLogos
+                li(class=["clients__logo", `clients__logo--${client.modifier}`])= client.name
+        article.testimonial(aria-label="Client testimonial")
+            +icon("quote", "testimonial__quote-mark")
+            blockquote.testimonial__quote= testimonial.quote
+            .testimonial__footer
+                .testimonial__person
+                    span.testimonial__avatar(aria-hidden="true")= testimonial.avatar
+                    span.testimonial__identity
+                        strong= testimonial.name
+                        small= `${testimonial.role}`
+                .testimonial__dots(role="img" aria-label=`Slide ${testimonial.slides[0]} of ${testimonial.slides.length}`)
+                    each slide, i in testimonial.slides
+                        span(class={"testimonial__dot": true, "testimonial__dot--current": i === 0})

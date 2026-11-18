@@ -1,0 +1,6 @@
+section.stats(aria-label="Keepsake by the numbers")
+    .container.stats__grid
+        each statistic in statistics
+            .stats__item
+                span.stats__number= statistic.number
+                span.stats__label= statistic.label

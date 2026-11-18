@@ -1,0 +1,22 @@
+section.works#works(aria-labelledby="works-title")
+    .container.works__container
+        .works__layout
+            each category in workCategories
+                input(
+                    class={"works__filter-control": true, "works__filter-control--active": category.active}
+                    type="radio"
+                    name="work-filter"
+                    id=`filter-${category.id}`
+                    checked=category.active ? true : false
+                )
+            .works__heading-row
+                h2#works-title.works__title Our awesome works
+                .works__filter-viewport(role="group" aria-label="Filter works by category")
+                    .works__filter-row
+                        each category in workCategories
+                            label(class={"works__filter-chip": true, "works__filter-chip--active": category.active} for=`filter-${category.id}`)= category.label
+            .works__grid
+                each work in portfolioWorks
+                    +work-card(work)
+            .works__more
+                +btn("Load more works", "#contact", "outline")

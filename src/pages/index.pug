@@ -1,19 +1,29 @@
 extends ../layouts/main
 
-block fonts
-    include ../includes/fonts
+block title
+    title Keepsake — Digital & Branding Agency
 
 append meta
     include ../includes/meta
 
-block data
-    include ../data/data
+prepend styles
+    include ../includes/fonts
+
+block icons
+    include ../includes/icons
 
 block header
     include ../components/header
 
 block content
-    include ../components/content
+    main#top.page-main
+        include ../components/sections/hero
+        include ../components/sections/works
+        include ../components/sections/work-cta
+        include ../components/sections/services
+        include ../components/sections/stats
+        include ../components/sections/clients
+        include ../components/sections/journal
 
 block footer
     include ../components/footer

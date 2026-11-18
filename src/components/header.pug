@@ -1,4 +1,34 @@
-header.header
-    .header-inner
-        include logo
-        include navigation
+header.site-header
+    .container.site-header__inner
+        a.brand(href="#top" aria-label="Keepsake home")
+            span.brand__mark(aria-hidden="true") K
+            span.brand__name eepsake
+
+        nav.primary-nav(aria-label="Main navigation")
+            each link in navigationLinks
+                a(class={"primary-nav__link": true, "primary-nav__link--active": link.active} href=link.href aria-current=link.active ? "page" : false)= link.label
+            a.primary-nav__favourites(href="#works" aria-label="Favourites")
+                +icon("heart", "primary-nav__icon")
+
+        details.mobile-menu
+            summary.mobile-menu__toggle(aria-label="Toggle navigation menu" aria-controls="mobile-navigation")
+                span.mobile-menu__line(aria-hidden="true")
+                span.mobile-menu__line(aria-hidden="true")
+            .mobile-menu__panel#mobile-navigation
+                nav.mobile-nav(aria-label="Mobile navigation")
+                    each link in navigationLinks
+                        a(class={"mobile-nav__link": true, "mobile-nav__link--active": link.active} href=link.href aria-current=link.active ? "page" : false)
+                            span.mobile-nav__label= link.label
+                            +icon("chevron", "mobile-nav__chevron")
+                .mobile-menu__actions
+                    each action in mobileActions
+                        +btn(action.label, action.href, action.modifier)
+                            +icon(action.icon, "button__icon")
+                            span.button__label= action.label
+                .mobile-menu__contact
+                    p.mobile-menu__contact-label Say hello
+                    a.mobile-menu__email(href="mailto:hello@keepsake.studio") hello@keepsake.studio
+                    a.mobile-menu__phone(href="tel:+442079460000") +44 20 7946 0000
+                    .social-links(role="group" aria-label="Social media")
+                        each social in socialLinks
+                            a(class=["social-links__link", `social-links__link--${social.name}`] href=social.href aria-label=social.label)= social.code
