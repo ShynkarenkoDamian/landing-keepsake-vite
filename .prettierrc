@@ -1,0 +1,21 @@
+{
+    "plugins": ["@prettier/plugin-pug"],
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": ["*.scss", "*.json", "*.md", "*.yml", "*.yaml"],
+            "options": {
+                "singleQuote": true,
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "*.pug",
+            "options": {
+                "pugAttributeSeparator": "none"
+            }
+        }
+    ]
+}
