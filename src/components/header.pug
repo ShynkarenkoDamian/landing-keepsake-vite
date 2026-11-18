@@ -6,7 +6,11 @@ header.site-header
 
         nav.primary-nav(aria-label="Main navigation")
             each link in navigationLinks
-                a(class={"primary-nav__link": true, "primary-nav__link--active": link.active} href=link.href aria-current=link.active ? "page" : false)= link.label
+                a(
+                    class={ "primary-nav__link": true, "primary-nav__link--active": link.active }
+                    href=link.href
+                    aria-current=link.active ? "page" : false
+                )= link.label
             a.primary-nav__favourites(href="#works" aria-label="Favourites")
                 +icon("heart", "primary-nav__icon")
 
@@ -14,10 +18,14 @@ header.site-header
             summary.mobile-menu__toggle(aria-label="Toggle navigation menu" aria-controls="mobile-navigation")
                 span.mobile-menu__line(aria-hidden="true")
                 span.mobile-menu__line(aria-hidden="true")
-            .mobile-menu__panel#mobile-navigation
+            #mobile-navigation.mobile-menu__panel
                 nav.mobile-nav(aria-label="Mobile navigation")
                     each link in navigationLinks
-                        a(class={"mobile-nav__link": true, "mobile-nav__link--active": link.active} href=link.href aria-current=link.active ? "page" : false)
+                        a(
+                            class={ "mobile-nav__link": true, "mobile-nav__link--active": link.active }
+                            href=link.href
+                            aria-current=link.active ? "page" : false
+                        )
                             span.mobile-nav__label= link.label
                             +icon("chevron", "mobile-nav__chevron")
                 .mobile-menu__actions
@@ -31,4 +39,8 @@ header.site-header
                     a.mobile-menu__phone(href="tel:+442079460000") +44 20 7946 0000
                     .social-links(role="group" aria-label="Social media")
                         each social in socialLinks
-                            a(class=["social-links__link", `social-links__link--${social.name}`] href=social.href aria-label=social.label)= social.code
+                            a(
+                                class=["social-links__link", `social-links__link--${social.name}`]
+                                href=social.href
+                                aria-label=social.label
+                            )= social.code

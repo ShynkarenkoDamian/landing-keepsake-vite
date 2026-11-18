@@ -1,11 +1,15 @@
-section.journal#journal(aria-labelledby="journal-title")
+section#journal.journal(aria-labelledby="journal-title")
     .container.journal__container
         h2#journal-title.journal__title From the journal
         p.journal__intro Notes on process, case studies and things that inspire us.
         .journal__grid
             each entry in journalEntries
                 article.journal-card
-                    a(class=["journal-card__thumb", `journal-card__thumb--${entry.thumbnail}`] href="#contact" aria-label=`Read: ${entry.title}`)
+                    a(
+                        class=["journal-card__thumb", `journal-card__thumb--${entry.thumbnail}`]
+                        href="#contact"
+                        aria-label=`Read: ${entry.title}`
+                    )
                         span(aria-hidden="true")
                     .journal-card__copy
                         p.journal-card__meta

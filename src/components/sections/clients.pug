@@ -14,6 +14,9 @@ section.clients(aria-labelledby="clients-title")
                     span.testimonial__identity
                         strong= testimonial.name
                         small= `${testimonial.role}`
-                .testimonial__dots(role="img" aria-label=`Slide ${testimonial.slides[0]} of ${testimonial.slides.length}`)
+                .testimonial__dots(
+                    role="img"
+                    aria-label=`Slide ${testimonial.slides[0]} of ${testimonial.slides.length}`
+                )
                     each slide, i in testimonial.slides
-                        span(class={"testimonial__dot": true, "testimonial__dot--current": i === 0})
+                        span(class={ testimonial__dot: true, "testimonial__dot--current": i === 0 })

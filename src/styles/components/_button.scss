@@ -17,7 +17,11 @@
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
-  transition: color var(--ease), background var(--ease), border-color var(--ease), transform var(--ease);
+  transition:
+    color var(--ease),
+    background var(--ease),
+    border-color var(--ease),
+    transform var(--ease);
 
   &--primary {
     background: var(--color-accent);
@@ -43,7 +47,7 @@
     width: 17px;
     height: 17px;
     fill: none;
-    stroke: currentColor;
+    stroke: currentcolor;
     stroke-linecap: square;
     stroke-linejoin: miter;
     stroke-width: 1.8;

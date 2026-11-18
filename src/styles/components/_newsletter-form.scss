@@ -42,7 +42,9 @@
     color: var(--color-white);
     font-family: var(--font-body);
     font-size: 14px;
-    transition: border-color var(--ease), background var(--ease);
+    transition:
+      border-color var(--ease),
+      background var(--ease);
 
     &::placeholder {
       color: var(--color-input-muted);
@@ -144,8 +146,7 @@
 
     &__fields {
       grid-template-columns: minmax(0, 1fr) auto;
-      column-gap: 0;
-      row-gap: 10px;
+      gap: 10px 0;
     }
 
     &__input {

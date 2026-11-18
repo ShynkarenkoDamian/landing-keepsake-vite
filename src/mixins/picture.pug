@@ -1,12 +1,20 @@
-mixin picture(name, alt="", width=640, height=480, options={})
-    - const imageWidths = options.widths || [320, 640, 960]
-    - const imageSizes = options.sizes || "100vw"
-    - const jpegWidth = options.jpegWidth || imageWidths[imageWidths.length - 1]
-    - const avifSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.avif ${imageWidth}w`).join(", ")
-    - const webpSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.webp ${imageWidth}w`).join(", ")
-    - const loading = options.loading || "lazy"
-    - const fetchPriority = options.fetchPriority ? "high" : false
+mixin picture(name, alt = "", width = 640, height = 480, options = {})
+    - const imageWidths = options.widths || [320, 640, 960];
+    - const imageSizes = options.sizes || "100vw";
+    - const jpegWidth = options.jpegWidth || imageWidths[imageWidths.length - 1];
+    - const avifSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.avif ${imageWidth}w`).join(", ");
+    - const webpSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.webp ${imageWidth}w`).join(", ");
+    - const loading = options.loading || "lazy";
+    - const fetchPriority = options.fetchPriority ? "high" : false;
     picture
         source(type="image/avif" srcset=avifSrcset sizes=imageSizes)
         source(type="image/webp" srcset=webpSrcset sizes=imageSizes)
-        img(src=`/src/assets/images/${name}-${jpegWidth}.jpg` alt=alt width=width height=height decoding="async" loading=loading fetchpriority=fetchPriority)
+        img(
+            src=`/src/assets/images/${name}-${jpegWidth}.jpg`
+            alt=alt
+            width=width
+            height=height
+            decoding="async"
+            loading=loading
+            fetchpriority=fetchPriority
+        )

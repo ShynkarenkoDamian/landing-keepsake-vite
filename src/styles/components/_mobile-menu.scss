@@ -24,7 +24,9 @@
     height: 2px;
     display: block;
     background: var(--color-text-dark);
-    transition: transform var(--ease), width var(--ease);
+    transition:
+      transform var(--ease),
+      width var(--ease);
   }
 
   &[open] &__line:first-child {
@@ -62,7 +64,7 @@
       width: 17px;
       height: 17px;
       margin-right: 6px;
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 

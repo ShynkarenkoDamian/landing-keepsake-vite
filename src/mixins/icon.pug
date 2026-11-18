@@ -1,5 +1,5 @@
-mixin icon(name, className="icon")
-    - const viewBox = name === "quote" ? "0 0 54 44" : ["web", "motion", "print", "illustration"].includes(name) ? "0 0 48 48" : "0 0 24 24"
+mixin icon(name, className = "icon")
+    - const viewBox = name === "quote" ? "0 0 54 44" : ["web", "motion", "print", "illustration"].includes(name) ? "0 0 48 48" : "0 0 24 24";
     svg(class=className aria-hidden="true" focusable="false" viewBox=viewBox)
         case name
             when "heart"
@@ -11,7 +11,9 @@ mixin icon(name, className="icon")
             when "up"
                 use(href="#icon-up")
             when "quote"
-                path.icon__shape(d="M22 2C9 6 2 16 2 30v12h20V24h-9c1-5 5-9 11-12L22 2Zm27 0C36 6 29 16 29 30v12h20V24h-9c1-5 5-9 11-12l-2-10Z")
+                path.icon__shape(
+                    d="M22 2C9 6 2 16 2 30v12h20V24h-9c1-5 5-9 11-12L22 2Zm27 0C36 6 29 16 29 30v12h20V24h-9c1-5 5-9 11-12l-2-10Z"
+                )
             when "web"
                 rect.icon__frame(x="8" y="12" width="32" height="24")
                 rect.icon__screen(x="13" y="17" width="22" height="14")

@@ -51,7 +51,10 @@
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
-    transition: color var(--ease), background var(--ease), border-color var(--ease);
+    transition:
+      color var(--ease),
+      background var(--ease),
+      border-color var(--ease);
 
     &:hover {
       border-color: var(--color-accent);

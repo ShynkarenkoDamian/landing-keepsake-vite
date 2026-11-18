@@ -1,10 +1,10 @@
-section.works#works(aria-labelledby="works-title")
+section#works.works(aria-labelledby="works-title")
     .container.works__container
         .works__layout
             //- Keep filters before the heading and grid so the :checked ~ selectors continue to match.
             each category in workCategories
                 input(
-                    class={"works__filter-control": true, "works__filter-control--active": category.active}
+                    class={ "works__filter-control": true, "works__filter-control--active": category.active }
                     type="radio"
                     name="work-filter"
                     value=category.id
@@ -16,7 +16,10 @@ section.works#works(aria-labelledby="works-title")
                 .works__filter-viewport(role="group" aria-label="Filter works by category")
                     .works__filter-row
                         each category in workCategories
-                            label(class={"works__filter-chip": true, "works__filter-chip--active": category.active} for=`filter-${category.id}`)= category.label
+                            label(
+                                class={ "works__filter-chip": true, "works__filter-chip--active": category.active }
+                                for=`filter-${category.id}`
+                            )= category.label
             .works__grid
                 each work in portfolioWorks
                     +work-card(work)

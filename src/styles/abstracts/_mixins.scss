@@ -4,7 +4,7 @@
 @mixin mq($bp) {
   $min-width: map.get(tokens.$breakpoints, $bp);
 
-  @if $min-width == null {
+  @if not $min-width {
     @error 'Unknown breakpoint `#{$bp}`. Use one of: #{map.keys(tokens.$breakpoints)}.';
   }
 
@@ -26,7 +26,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }

@@ -1,4 +1,4 @@
-footer.site-footer#contact
+footer#contact.site-footer
     .container.site-footer__container
         .site-footer__top
             .footer-links
@@ -7,19 +7,27 @@ footer.site-footer#contact
                         h2.footer-links__title= group.title
                         each link in group.links
                             a.footer-links__link(href=link.href)= link.label
-            form.newsletter-form#newsletter(action="#newsletter-success" method="get")
+            form#newsletter.newsletter-form(action="#newsletter-success" method="get")
                 h2.newsletter-form__title Newsletter
                 p.newsletter-form__intro Fresh case studies and design notes, once a month.
                 .newsletter-form__fields
                     .newsletter-form__email-field
                         label.visually-hidden(for="newsletter-email") Your email address
-                        input.newsletter-form__input#newsletter-email(type="email" placeholder="Your email address" autocomplete="email" required aria-describedby="newsletter-error")
-                        p.newsletter-form__error#newsletter-error Please enter a valid email address.
+                        input#newsletter-email.newsletter-form__input(
+                            type="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                            required
+                            aria-describedby="newsletter-error"
+                        )
+                        p#newsletter-error.newsletter-form__error Please enter a valid email address.
                     label.newsletter-form__consent(for="newsletter-consent")
                         input#newsletter-consent(type="checkbox" required)
                         span I agree to the privacy policy
-                    +btn("Subscribe", null, "primary", "button")(type="submit" class="newsletter-form__submit")
-                p.newsletter-form__success#newsletter-success(role="status")
+                    +btn("Subscribe", null, "primary", "button").newsletter-form__submit(
+                        type="submit"
+                    )
+                p#newsletter-success.newsletter-form__success(role="status")
                     span.newsletter-form__success-check(aria-hidden="true") ✓
                     span
                         | You're in! Check your inbox to confirm.
@@ -28,6 +36,10 @@ footer.site-footer#contact
             p.site-footer__copyright © 2026 Keepsake. All rights reserved.
             .social-links(role="group" aria-label="Social media")
                 each social in socialLinks
-                    a(class=["social-links__link", `social-links__link--${social.name}`] href=social.href aria-label=social.label)= social.code
+                    a(
+                        class=["social-links__link", `social-links__link--${social.name}`]
+                        href=social.href
+                        aria-label=social.label
+                    )= social.code
 a.back-to-top(href="#top" aria-label="Back to top")
     +icon("up", "back-to-top__icon")

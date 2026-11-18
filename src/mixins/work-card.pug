@@ -1,4 +1,4 @@
-mixin work-card(work, href="#contact")
+mixin work-card(work, href = "#contact")
     article.work-card(data-category=work.category)
         .work-card__art(class=`work-card__art--${work.art}` aria-hidden="true")
             case work.art

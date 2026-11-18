@@ -10,10 +10,10 @@ $colors: (
   bg-light: #f0f3f4,
   border: #e1e5e8,
   footer: #2a2a2d,
-  overlay: rgba(30, 32, 36, 0.82),
+  overlay: rgb(30 32 36 / 82%),
   white: #fff,
-  header-border: rgba(58, 58, 60, 0.06),
-  header-shadow: rgba(32, 37, 40, 0.035),
+  header-border: rgb(58 58 60 / 6%),
+  header-shadow: rgb(32 37 40 / 3.5%),
   button-border: #d4d9dc,
   grey-light: #e7e8e8,
   grey-border: #c4cbd0,
@@ -24,8 +24,8 @@ $colors: (
   social-twitter: #1cb3d8,
   social-dribbble: #e879aa,
   social-pinterest: #e84c52,
-  shadow-project: rgba(25, 27, 31, 0.2),
-  shadow-accent: rgba(249, 88, 88, 0.28),
+  shadow-project: rgb(25 27 31 / 20%),
+  shadow-accent: rgb(249 88 88 / 28%),
   art-mint: #8fcfc5,
   art-tag: #eee3c9,
   art-tag-border: #d5c4a2,
@@ -56,7 +56,7 @@ $colors: (
   art-journal-two: #454a56,
   art-journal-three: #83c6d4,
   art-journal-four: #302c2b,
-  art-thumb-overlay: rgba(255, 255, 255, 0.18),
+  art-thumb-overlay: rgb(255 255 255 / 18%),
   service-frame: #65717b,
   service-screen: #b9d9e5,
   service-green: #83c995,
@@ -69,20 +69,28 @@ $colors: (
   footer-muted: #a3a5aa,
   footer-copy: #777a80,
   brand-grey: #b9bec4,
-  meta-grey: #b0b7bd
+  meta-grey: #b0b7bd,
 );
-
 $fonts: (
-  display: ('Oswald', 'Arial Narrow', sans-serif),
-  body: ('Open Sans', Arial, sans-serif),
-  script: ('Dancing Script', cursive)
+  display: (
+    'Oswald',
+    'Arial Narrow',
+    sans-serif,
+  ),
+  body: (
+    'Open Sans',
+    arial,
+    sans-serif,
+  ),
+  script: (
+    'Dancing Script',
+    cursive,
+  ),
 );
-
 $breakpoints: (
   md: 768px,
-  xl: 1280px
+  xl: 1280px,
 );
-
 $base-sizes: (
   container-width: 1100px,
   gutter: 20px,
@@ -100,9 +108,8 @@ $base-sizes: (
   work-ratio: '1 / 0.72',
   button-height: 42px,
   round: 50%,
-  ease: 180ms ease
+  ease: 180ms ease,
 );
-
 $responsive-sizes: (
   md: (
     gutter: 40px,
@@ -117,7 +124,7 @@ $responsive-sizes: (
     stat-size: 40px,
     service-icon-size: 96px,
     journal-thumb-size: 150px,
-    work-ratio: '1 / 0.79'
+    work-ratio: '1 / 0.79',
   ),
   xl: (
     gutter: 90px,
@@ -128,10 +135,9 @@ $responsive-sizes: (
     quote-size: 22px,
     stat-size: 48px,
     service-icon-size: 96px,
-    work-ratio: '1 / 0.79'
-  )
+    work-ratio: '1 / 0.79',
+  ),
 );
-
 $font-size-body: 14px;
 $border-radius: 0;
 $animation-ease: 180ms ease;

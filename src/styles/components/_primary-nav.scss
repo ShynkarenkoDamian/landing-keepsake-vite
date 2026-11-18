@@ -27,7 +27,9 @@
     place-items: center;
     background: var(--color-accent);
     color: var(--color-white);
-    transition: background var(--ease), transform var(--ease);
+    transition:
+      background var(--ease),
+      transform var(--ease);
 
     &:hover {
       background: var(--color-accent-hover);
@@ -38,7 +40,7 @@
   &__icon {
     width: 17px;
     height: 17px;
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   @include a.mq(md) {
