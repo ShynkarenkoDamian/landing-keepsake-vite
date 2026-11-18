@@ -1,0 +1,38 @@
+@use '../abstracts' as a;
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__title {
+    margin: 0 0 3px;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    font-size: 13px;
+    transition: color var(--ease);
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  @include a.mq(md) {
+    gap: 30px;
+  }
+}
