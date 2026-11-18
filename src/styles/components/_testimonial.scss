@@ -1,0 +1,107 @@
+@use '../abstracts' as a;
+
+.testimonial {
+  padding: 24px;
+  background: var(--color-bg-light);
+
+  &__quote-mark {
+    width: 28px;
+    height: 24px;
+    display: block;
+    fill: var(--color-accent);
+  }
+
+  &__quote {
+    margin: 18px 0 15px;
+    color: var(--color-text);
+    font-size: var(--quote-size);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: var(--round);
+    background: var(--color-teal);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__identity {
+    strong,
+    small {
+      display: block;
+    }
+
+    strong {
+      color: var(--color-text-dark);
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    small {
+      margin-top: 2px;
+      color: var(--color-muted);
+      font-size: 12px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 4px;
+    display: block;
+    background: var(--color-grey-slider);
+
+    &--current {
+      width: 24px;
+      background: var(--color-accent);
+    }
+  }
+
+  @include a.mq(md) {
+    padding: 28px 48px 32px;
+
+    &__quote-mark {
+      width: 30px;
+      height: 26px;
+    }
+
+    &__quote {
+      margin: 22px 0 18px;
+    }
+
+    &__footer {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

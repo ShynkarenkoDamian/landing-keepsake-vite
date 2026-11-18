@@ -1,0 +1,90 @@
+@use '../abstracts' as a;
+
+.clients {
+  padding-block: var(--section-space);
+  padding-bottom: var(--section-space);
+
+  &__title {
+    @include a.section-heading;
+  }
+
+  &__intro {
+    margin-top: 13px;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__logos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 20px 16px;
+    margin: 28px 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__logo {
+    color: var(--color-brand-grey);
+    font-size: 20px;
+    line-height: 1;
+    white-space: nowrap;
+
+    &--nordly {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    &--halcyon {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    &--arco {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    &--pinewood {
+      font-family: var(--font-body);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    &--vela {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    &--ostra {
+      font-family: var(--font-display);
+      font-size: 19px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @include a.mq(md) {
+    &__logos {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px 18px;
+      margin-block: 34px 28px;
+    }
+  }
+
+  @include a.mq(xl) {
+    &__logos {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+}

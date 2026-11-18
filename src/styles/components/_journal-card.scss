@@ -1,0 +1,109 @@
+@use '../abstracts' as a;
+
+.journal-card {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  &__thumb {
+    position: relative;
+    width: var(--journal-thumb-size);
+    height: var(--journal-thumb-size);
+    display: block;
+    flex: 0 0 var(--journal-thumb-size);
+    overflow: hidden;
+    background: var(--color-art-journal-one);
+
+    span {
+      position: absolute;
+      inset: 20%;
+      transform: rotate(-14deg);
+      background: var(--color-art-thumb-overlay);
+    }
+
+    &--two {
+      background: var(--color-art-journal-two);
+    }
+
+    &--three {
+      background: var(--color-art-journal-three);
+    }
+
+    &--four {
+      background: var(--color-art-journal-four);
+    }
+  }
+
+  &__copy {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    margin: 0 0 8px;
+    color: var(--color-meta-grey);
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-transform: uppercase;
+
+    span::before {
+      margin-right: 10px;
+      color: var(--color-grey-divider);
+      content: '/';
+    }
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  &__excerpt {
+    margin: 0 0 7px;
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  &__read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    span {
+      font-family: var(--font-body);
+      font-size: 20px;
+      line-height: 0.7;
+    }
+  }
+
+  &__title a:hover,
+  &__read-more:hover {
+    color: var(--color-accent-hover);
+  }
+
+  @include a.mq(md) {
+    gap: 18px;
+
+    &__title {
+      font-size: 16px;
+    }
+  }
+}

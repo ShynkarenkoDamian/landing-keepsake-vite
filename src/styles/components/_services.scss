@@ -1,0 +1,45 @@
+@use '../abstracts' as a;
+
+.services {
+  padding-block: var(--section-space);
+  padding-top: 0;
+
+  &__title {
+    @include a.section-heading;
+  }
+
+  &__intro {
+    max-width: 720px;
+    margin-top: 14px;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 36px;
+    margin-top: 18px;
+  }
+
+  @include a.mq(md) {
+    &__intro {
+      margin-top: 14px;
+    }
+
+    &__grid {
+      column-gap: 35px;
+      row-gap: 42px;
+      margin-top: 28px;
+    }
+  }
+
+  @include a.mq(xl) {
+    &__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px;
+    }
+  }
+}
