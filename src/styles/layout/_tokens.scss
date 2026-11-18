@@ -1,1 +1,32 @@
-// Responsive CSS custom properties are added in the layout stage.
+@use 'sass:map';
+@use '../abstracts' as a;
+
+:root {
+  @each $name, $value in a.$colors {
+    --color-#{'' + $name}: #{$value};
+  }
+
+  @each $name, $value in a.$fonts {
+    --font-#{$name}: #{$value};
+  }
+
+  @each $name, $value in a.$base-sizes {
+    --#{$name}: #{$value};
+  }
+}
+
+@include a.mq(md) {
+  :root {
+    @each $name, $value in map.get(a.$responsive-sizes, md) {
+      --#{$name}: #{$value};
+    }
+  }
+}
+
+@include a.mq(xl) {
+  :root {
+    @each $name, $value in map.get(a.$responsive-sizes, xl) {
+      --#{$name}: #{$value};
+    }
+  }
+}

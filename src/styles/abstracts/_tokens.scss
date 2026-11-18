@@ -1,1 +1,137 @@
-// Lab 7 source design tokens are added in the token stage.
+@use 'sass:map';
+
+$colors: (
+  accent: #f95858,
+  accent-hover: #e44646,
+  teal: #2cd5c4,
+  text-dark: #3a3a3c,
+  text: #666a6e,
+  muted: #9aa0a6,
+  bg-light: #f0f3f4,
+  border: #e1e5e8,
+  footer: #2a2a2d,
+  overlay: rgba(30, 32, 36, 0.82),
+  white: #fff,
+  header-border: rgba(58, 58, 60, 0.06),
+  header-shadow: rgba(32, 37, 40, 0.035),
+  button-border: #d4d9dc,
+  grey-light: #e7e8e8,
+  grey-border: #c4cbd0,
+  grey-divider: #c7cbd0,
+  grey-slider: #cbd1d5,
+  social-rss: #f6a43f,
+  social-facebook: #4f70b4,
+  social-twitter: #1cb3d8,
+  social-dribbble: #e879aa,
+  social-pinterest: #e84c52,
+  shadow-project: rgba(25, 27, 31, 0.2),
+  shadow-accent: rgba(249, 88, 88, 0.28),
+  art-mint: #8fcfc5,
+  art-tag: #eee3c9,
+  art-tag-border: #d5c4a2,
+  art-ink: #4a4743,
+  art-type: #252525,
+  art-paper: #ececec,
+  art-slate: #4e4d57,
+  art-cover: #2e3437,
+  art-disc: #e8eaed,
+  art-tan: #b3a089,
+  art-tan-paper: #cbb99d,
+  art-tan-border: #94795e,
+  art-red: #bc3d36,
+  art-profile: #202126,
+  art-profile-border: #393c41,
+  art-profile-name: #53545b,
+  art-profile-email: #194343,
+  art-salmon: #e9a99a,
+  art-card: #f6f3f0,
+  art-grey: #d8d6d2,
+  art-walls: #3d3a38,
+  art-pink: #f2b6bc,
+  art-charcoal: #2d2f31,
+  art-fabric: #3d4a5c,
+  art-fabric-border: #d9dce1,
+  art-fabric-text: #e5e6e9,
+  art-journal-one: #5b4a3f,
+  art-journal-two: #454a56,
+  art-journal-three: #83c6d4,
+  art-journal-four: #302c2b,
+  art-thumb-overlay: rgba(255, 255, 255, 0.18),
+  service-frame: #65717b,
+  service-screen: #b9d9e5,
+  service-green: #83c995,
+  service-base: #7d8790,
+  service-yellow: #f3c643,
+  footer-divider: #3d3d40,
+  input-border: #48494d,
+  input-bg: #38383c,
+  input-muted: #898c91,
+  footer-muted: #a3a5aa,
+  footer-copy: #777a80,
+  brand-grey: #b9bec4,
+  meta-grey: #b0b7bd
+);
+
+$fonts: (
+  display: ('Oswald', 'Arial Narrow', sans-serif),
+  body: ('Open Sans', Arial, sans-serif),
+  script: ('Dancing Script', cursive)
+);
+
+$breakpoints: (
+  md: 768px,
+  xl: 1280px
+);
+
+$base-sizes: (
+  container-width: 1100px,
+  gutter: 20px,
+  section-space: 56px,
+  header-height: 64px,
+  hero-size: 26px,
+  cta-size: 22px,
+  nav-size: 12px,
+  logo-size: 22px,
+  brand-mark-size: 34px,
+  quote-size: 16px,
+  stat-size: 38px,
+  service-icon-size: 72px,
+  journal-thumb-size: 96px,
+  work-ratio: '1 / 0.72',
+  button-height: 42px,
+  round: 50%,
+  ease: 180ms ease
+);
+
+$responsive-sizes: (
+  md: (
+    gutter: 40px,
+    section-space: 72px,
+    header-height: 84px,
+    hero-size: 32px,
+    cta-size: 24px,
+    nav-size: 13px,
+    logo-size: 26px,
+    brand-mark-size: 40px,
+    quote-size: 19px,
+    stat-size: 40px,
+    service-icon-size: 96px,
+    journal-thumb-size: 150px,
+    work-ratio: '1 / 0.79'
+  ),
+  xl: (
+    gutter: 90px,
+    section-space: 90px,
+    header-height: 100px,
+    hero-size: 40px,
+    cta-size: 28px,
+    quote-size: 22px,
+    stat-size: 48px,
+    service-icon-size: 96px,
+    work-ratio: '1 / 0.79'
+  )
+);
+
+$font-size-body: 14px;
+$border-radius: 0;
+$animation-ease: 180ms ease;
