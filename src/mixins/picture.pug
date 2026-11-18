@@ -11,6 +11,8 @@ mixin picture(name, alt, width, height, options = {})
         img(
             class=options.imageClass
             src=`/src/assets/images/${name}-${maxWidth}.${fallback}`
+            srcset=srcset(fallback)
+            sizes=sizes
             alt=alt
             width=width
             height=height
