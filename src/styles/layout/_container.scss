@@ -1,1 +1,10 @@
-// Container and visually-hidden utility styles are added in the layout stage.
+@use '../abstracts' as a;
+
+.container {
+  width: min(calc(100% - var(--gutter) - var(--gutter)), var(--container-width));
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  @include a.visually-hidden;
+}
