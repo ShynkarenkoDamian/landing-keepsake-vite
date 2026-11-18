@@ -1,6 +1,7 @@
 section.works#works(aria-labelledby="works-title")
     .container.works__container
         .works__layout
+            //- Keep filters before the heading and grid so the :checked ~ selectors continue to match.
             each category in workCategories
                 input(
                     class={"works__filter-control": true, "works__filter-control--active": category.active}
