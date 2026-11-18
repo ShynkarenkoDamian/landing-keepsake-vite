@@ -5,12 +5,12 @@ section#journal.journal(aria-labelledby="journal-title")
         .journal__grid
             each entry in journalEntries
                 article.journal-card
-                    a(
-                        class=["journal-card__thumb", `journal-card__thumb--${entry.thumbnail}`]
-                        href="#contact"
-                        aria-label=`Read: ${entry.title}`
-                    )
-                        span(aria-hidden="true")
+                    a.journal-card__thumb(href="#contact" aria-label=`Read: ${entry.title}`)
+                        +picture(`journal-${entry.thumbnail}`, "", 400, 400, {
+                            sizes: "(min-width: 768px) 150px, 96px",
+                            className: "journal-card__media",
+                            imageClass: "journal-card__image",
+                        })
                     .journal-card__copy
                         p.journal-card__meta
                             time(datetime=entry.dateTime)= entry.date

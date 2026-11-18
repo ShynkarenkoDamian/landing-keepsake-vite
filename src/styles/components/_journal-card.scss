@@ -13,26 +13,18 @@
     display: block;
     flex: 0 0 var(--journal-thumb-size);
     overflow: hidden;
-    background: var(--color-art-journal-one);
+    background: var(--color-grey-light);
+  }
 
-    span {
-      position: absolute;
-      inset: 20%;
-      transform: rotate(-14deg);
-      background: var(--color-art-thumb-overlay);
-    }
+  &__media,
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 
-    &--two {
-      background: var(--color-art-journal-two);
-    }
-
-    &--three {
-      background: var(--color-art-journal-three);
-    }
-
-    &--four {
-      background: var(--color-art-journal-four);
-    }
+  &__image {
+    object-fit: cover;
   }
 
   &__copy {

@@ -1,20 +1,20 @@
-mixin picture(name, alt = "", width = 640, height = 480, options = {})
-    - const imageWidths = options.widths || [320, 640, 960];
-    - const imageSizes = options.sizes || "100vw";
-    - const jpegWidth = options.jpegWidth || imageWidths[imageWidths.length - 1];
-    - const avifSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.avif ${imageWidth}w`).join(", ");
-    - const webpSrcset = imageWidths.map((imageWidth) => `/src/assets/images/${name}-${imageWidth}.webp ${imageWidth}w`).join(", ");
+mixin picture(name, alt, width, height, options = {})
+    - const widths = options.widths || [400, 800];
+    - const sizes = options.sizes || "100vw";
+    - const fallback = options.fallback || "jpg";
     - const loading = options.loading || "lazy";
-    - const fetchPriority = options.fetchPriority ? "high" : false;
-    picture
-        source(type="image/avif" srcset=avifSrcset sizes=imageSizes)
-        source(type="image/webp" srcset=webpSrcset sizes=imageSizes)
+    - const maxWidth = widths[widths.length - 1];
+    - const srcset = (ext) => widths.map((w) => `/src/assets/images/${name}-${w}.${ext} ${w}w`).join(", ");
+    picture(class=options.className)
+        source(type="image/avif" srcset=srcset("avif") sizes=sizes)
+        source(type="image/webp" srcset=srcset("webp") sizes=sizes)
         img(
-            src=`/src/assets/images/${name}-${jpegWidth}.jpg`
+            class=options.imageClass
+            src=`/src/assets/images/${name}-${maxWidth}.${fallback}`
             alt=alt
             width=width
             height=height
             decoding="async"
             loading=loading
-            fetchpriority=fetchPriority
+            fetchpriority=options.fetchPriority ? "high" : false
         )
