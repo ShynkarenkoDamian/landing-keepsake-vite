@@ -7,6 +7,7 @@ section.works#works(aria-labelledby="works-title")
                     class={"works__filter-control": true, "works__filter-control--active": category.active}
                     type="radio"
                     name="work-filter"
+                    value=category.id
                     id=`filter-${category.id}`
                     checked=category.active ? true : false
                 )

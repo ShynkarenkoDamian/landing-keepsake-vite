@@ -1,0 +1,75 @@
+@use '../abstracts' as a;
+
+.hero {
+  background: var(--color-bg-light);
+
+  &__content {
+    min-height: 341px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block: 35px;
+  }
+
+  &__title {
+    max-width: 1000px;
+    margin: 0 0 11px;
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: var(--hero-size);
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.27;
+    text-transform: uppercase;
+  }
+
+  &__copy {
+    max-width: 700px;
+    margin: 0;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__actions {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  @include a.mq(md) {
+    &__content {
+      min-height: 266px;
+      padding-block: 45px;
+    }
+
+    &__title {
+      letter-spacing: 3px;
+      line-height: 1.25;
+    }
+
+    &__actions {
+      width: auto;
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    &__actions .button {
+      width: auto;
+      min-width: 120px;
+    }
+  }
+
+  @include a.mq(xl) {
+    &__content {
+      min-height: 278px;
+    }
+  }
+}
